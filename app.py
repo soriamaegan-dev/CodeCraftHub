@@ -144,7 +144,12 @@ def delete_course(course_id):
     except Exception as e:
         return jsonify({'error': f'Failed to delete course: {str(e)}'}), 500
 
-if __name__ == '__main__':
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "CodeCraftHub API is running!", "version": "1.0"}), 200
+
+if __name__ == "__main__":
     load_courses()
     print("CodeCraftHub API is starting...")
     print(f"Data will be stored in: {os.path.abspath(COURSES_FILE)}")
