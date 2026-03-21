@@ -42,6 +42,24 @@ def get_courses():
     except Exception as e:
         return jsonify({'error': f'Failed to retrieve courses: {str(e)}'}), 500
 
+
+@app.route('/api/courses/stats', methods=['GET'])
+def get_stats():
+    """Get statistics about all courses."""
+    try:
+        courses = load_courses()
+        stats = {
+            'total': len(courses),
+            'by_status': {
+                'Not Started': len([c for c in courses if c['status'] == 'Not Started']),
+                'In Progress': len([c for c in courses if c['status'] == 'In Progress']),
+                'Completed': len([c for c in courses if c['status'] == 'Completed'])
+            }
+        }
+        return jsonify(stats), 200
+    except Exception as e:
+        return jsonify({'error': f'Failed to retrieve stats: {str(e)}'}), 500
+
 @app.route('/api/courses/<int:course_id>', methods=['GET'])
 def get_course(course_id):
     try:
@@ -131,4 +149,5 @@ if __name__ == '__main__':
     print("CodeCraftHub API is starting...")
     print(f"Data will be stored in: {os.path.abspath(COURSES_FILE)}")
     print("API will be available at: http://localhost:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=8080)
+
