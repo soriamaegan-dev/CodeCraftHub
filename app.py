@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 COURSES_FILE = 'courses.json'
 VALID_STATUSES = ['Not Started', 'In Progress', 'Completed']
