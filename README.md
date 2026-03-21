@@ -5,7 +5,7 @@ responsive HTML dashboard. Developers can track courses they want to
 learn with full CRUD functionality.
 
 ## 🌐 Live Demo
-👉 [View on GitHub](https://github.com/soriamaegan-dev/CodeCraftHub)
+👉 [[View on GitHub](https://github.com/soriamaegan-dev/CodeCraftHub)](https://soriamaegan-dev.github.io/CodeCraftHub/dashboard.html)
 
 ## 📖 About
 CodeCraftHub is a REST API-based learning platform that allows developers
