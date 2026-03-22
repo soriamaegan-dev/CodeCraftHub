@@ -63,8 +63,8 @@
         .card-actions { display: flex; gap: 8px; }
         .btn-edit { background: #eff6ff; color: #1a56db; border: 1px solid #bfdbfe; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
         .btn-edit:hover { background: #dbeafe; }
-        .btn-delete { background: #fff1f2; color: #e11d48; border: 1px solid #fecdd3; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
-        .btn-delete:hover { background: #ffe4e6; }
+        .btn-danger { background: #fff1f2; color: #e11d48; border: 1px solid #fecdd3; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+        .btn-danger:hover { background: #ffe4e6; }
 
         /* Empty state */
         .empty-state { text-align: center; padding: 60px 20px; background: white; border-radius: 12px; }
@@ -209,7 +209,7 @@
             </div>
             <div class="card-actions">
                 <button class="btn-edit" onclick="editCourse(${c.id})">✏️ Edit</button>
-                <button class="btn-delete" onclick="handleDelete(${c.id})">Remove</button>
+                <button class="btn-danger" onclick="handleDelete(${c.id})">Remove</button>
             </div>
         </div>`;
     }
